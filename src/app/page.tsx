@@ -1,6 +1,6 @@
-import Hero from "@/app/Hero";
-import Features from "@/app/Features";
-import CTA from "@/app/CTA";
+import Hero from "@/components/Hero";
+import Features from "@/components/Features";
+import CTA from "@/components/CTA";
 
 export default function Home() {
   return (
