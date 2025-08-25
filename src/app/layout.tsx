@@ -1,11 +1,9 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import Sidebar from '@/components/Sidebar'
-import BottomNav from '@/components/BottomNav'
 
 export const metadata: Metadata = {
   title: 'Von Bella Comfort',
-  description: 'Premium comfort and luxury',
+  description: 'Discover luxury fashion and accessories that elevate your style',
 }
 
 export default function RootLayout({
@@ -15,17 +13,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <script src="https://cdn.tailwindcss.com/3.4.1"></script>
-      </head>
       <body>
-        <div className="flex">
-          <Sidebar />
-          <main className="flex-1">
-            {children}
-          </main>
-        </div>
-        <BottomNav />
+        {children}
       </body>
     </html>
   )
