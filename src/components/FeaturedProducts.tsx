@@ -1,6 +1,6 @@
 'use client';
 import { Container, Typography } from '@mui/material';
-import Grid2 from '@mui/material/Unstable_Grid2';
+import { Grid } from '@mui/material';
 import ProductCard, { Product } from './ProductCard';
 
 const FEATURED: Product[] = [
@@ -14,13 +14,13 @@ export default function FeaturedProducts() {
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
       <Typography variant="h4" fontWeight={700} align="center" gutterBottom>Featured Products</Typography>
-      <Grid2 container spacing={3} sx={{ mt: 1 }}>
+       <Grid container spacing={3} sx={{ mt: 1 }}>
         {FEATURED.map((p) => (
-          <Grid2 xs={12} sm={6} md={3} key={p.id}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }} key={p.id}>
             <ProductCard product={p} />
-          </Grid2>
+          </Grid>
         ))}
-      </Grid2>
+      </Grid>
     </Container>
   );
 }
