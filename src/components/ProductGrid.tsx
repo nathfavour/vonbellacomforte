@@ -68,9 +68,9 @@ export default function ProductGrid() {
         {products.map((product) => (
           <Grid2 key={product.id} xs={6} md={3}>
             <ProductCard product={product} />
-          </Grid>
+          </Grid2>
         ))}
-      </Grid>
+      </Grid2>
 
       {loading && (
         <Box display="flex" justifyContent="center" alignItems="center" py={4}>
