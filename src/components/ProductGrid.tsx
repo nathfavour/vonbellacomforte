@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import ProductCard, { Product } from './ProductCard';
 import { Box, CircularProgress, Container, Typography } from '@mui/material';
-import Grid2 from '@mui/material/Grid2';
+import Grid2 from '@mui/material/Unstable_Grid2';
 
 const SAMPLE_PRODUCTS: Product[] = [
   { id: 1, name: "Silk Midi Dress", price: 189, originalPrice: 249, image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400", category: "Dresses" },

@@ -1,6 +1,6 @@
 'use client';
 import { Container, Typography } from '@mui/material';
-import { Grid } from '@mui/material';
+import Grid2 from '@mui/material/Unstable_Grid2';
 import ProductCard, { Product } from './ProductCard';
 
 const FEATURED: Product[] = [
