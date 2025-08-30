@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --dark-brown: #4a2c2a;
   --dark-ash: #333333;
