@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import ProductCard, { Product } from './ProductCard';
+import { Box, CircularProgress, Container, Grid, Typography } from '@mui/material';
 
 const SAMPLE_PRODUCTS: Product[] = [
   { id: 1, name: "Silk Midi Dress", price: 189, originalPrice: 249, image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400", category: "Dresses" },
@@ -56,24 +57,26 @@ export default function ProductGrid() {
   }, [loadMoreProducts]);
 
   return (
-    <section id="products" className="w-full max-w-7xl mx-auto px-4 py-16">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold mb-4">Our Collection</h2>
-        <p className="text-gray-600">Discover luxury fashion and accessories curated just for you</p>
-      </div>
-      
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <Container id="products" maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
+      <Box textAlign="center" mb={4}>
+        <Typography variant="h4" fontWeight={700} gutterBottom>Our Collection</Typography>
+        <Typography color="text.secondary">Discover luxury fashion and accessories curated just for you</Typography>
+      </Box>
+
+      <Grid container spacing={3}>
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <Grid key={product.id} item xs={6} md={3}>
+            <ProductCard product={product} />
+          </Grid>
         ))}
-      </div>
-      
+      </Grid>
+
       {loading && (
-        <div className="flex justify-center items-center py-8">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-pink-600"></div>
-          <span className="ml-2 text-gray-600">Loading more products...</span>
-        </div>
+        <Box display="flex" justifyContent="center" alignItems="center" py={4}>
+          <CircularProgress size={24} sx={{ mr: 2 }} />
+          <Typography color="text.secondary">Loading more products...</Typography>
+        </Box>
       )}
-    </section>
+    </Container>
   );
 }

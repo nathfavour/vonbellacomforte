@@ -1,5 +1,6 @@
 'use client';
-import { Box, Card, CardActionArea, Container, Grid, Typography } from '@mui/material';
+import { Box, Card, CardActionArea, Container, Typography } from '@mui/material';
+import Grid2 from '@mui/material/Unstable_Grid2';
 
 type Category = {
   title: string;
@@ -17,9 +18,9 @@ export default function CategoryGrid() {
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
       <Typography variant="h4" fontWeight={700} align="center" gutterBottom>Shop by Category</Typography>
-      <Grid container spacing={2} sx={{ mt: 2 }}>
+      <Grid2 container spacing={2} sx={{ mt: 2 }}>
         {CATEGORIES.map((c) => (
-          <Grid item xs={6} md={3} key={c.title}>
+          <Grid2 xs={6} md={3} key={c.title}>
             <Card sx={{ position: 'relative', overflow: 'hidden', borderRadius: 2 }}>
               <CardActionArea>
                 <Box sx={{ pt: '125%', backgroundImage: `url(${c.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
@@ -29,9 +30,9 @@ export default function CategoryGrid() {
                 </Typography>
               </CardActionArea>
             </Card>
-          </Grid>
+          </Grid2>
         ))}
-      </Grid>
+      </Grid2>
     </Container>
   );
 }
