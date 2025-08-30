@@ -1,3 +1,4 @@
+'use client';
 import { useHero } from "@/hooks/useHero";
 
 export default function HeroBanner() {
